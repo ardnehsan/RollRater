@@ -69,5 +69,3 @@
         });
       }
  
-  
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9C6oqV8jftiOLIjPr1PU-K15hSPwpDQs&libraries=places&callback=initMap" async defer></script>
