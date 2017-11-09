@@ -1,0 +1,20 @@
+      .form{
+        background-image: url(https://static.pexels.com/photos/8313/food-eating-potatoes-beer-8313.jpg); 
+        background-position: center;
+        background-size: cover;
+        padding-left: 400px;
+        padding-right: 400px;
+ }
+
+      .form-control{
+        background-color: lightgrey;
+      }
+      #submitBtn{
+        background-color: #ff9800;
+        //**border button not working yet**//
+        border-style: solid;
+      }
+      .panel-title{
+        background-color: #ff9800;
+        padding: 18px; 
+      }
