@@ -1,3 +1,5 @@
+alert("working")
+
 var lat = 29.7885595;
 var lng = -95.9143899;
       var map;
@@ -21,9 +23,9 @@ var lng = -95.9143899;
         // position will be available as a google.maps.LatLng object. In this case,
         // we retrieve the marker's position using the
         // google.maps.LatLng.getPosition() method.
-        var infowindow = new google.maps.InfoWindow({
-          content: '<p>Marker Location:' + marker.getPosition() + '</p>'
-        });
+        // var infowindow = new google.maps.InfoWindow({
+        //   content: '<p>Marker Location:' + marker.getPosition() + '</p>'
+        // });
 
         google.maps.event.addListener(marker, 'click', function() {
           infowindow.open(map, marker);
