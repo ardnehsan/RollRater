@@ -1,0 +1,29 @@
+#logo-container{
+	font-family: creampuff;
+	background-color: #ff9800;
+}
+.review{
+	background-image: url(https://static.pexels.com/photos/461428/pexels-photo-461428.jpeg);
+ 	background-position: center;
+    background-size: cover;
+	}
+.row-center{
+	color: white;
+}
+.header-col-s12-light{
+	color: white;
+	font-size: 43px;
+}
+.form-group-has-feedback{
+	background-color: lightgray;
+	height: 65px;
+	max-width: 500px;
+	margin-left: 220px;
+}
+.form-control{
+	background-color: black;
+
+}
+.btn-large-waves-effect-waves-light-orange{
+
+}

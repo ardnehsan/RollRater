@@ -38,7 +38,7 @@
 
       function callback(results, status) {
         if (status !== google.maps.places.PlacesServiceStatus.OK) {
-          console.error(status);
+          
           return;
         }
         for (var i = 0, result; result = results[i]; i++) {
