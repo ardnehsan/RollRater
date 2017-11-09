@@ -2,14 +2,15 @@
       // This example requires the Places library. Include the libraries=places
       // parameter when you first load the API. For example:
       // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-
+var lat = 29.7885595;
+var lng = -95.9143899;
     var map;
       var infoWindow;
       var service;
 
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 29.6885595, lng: -95.9143899},
+          center: {lat, lng},
           zoom: 15,
           styles: [{
             stylers: [{ visibility: 'simplified' }]
