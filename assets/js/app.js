@@ -70,3 +70,66 @@ var lng = -95.9143899;
         });
       }
  
+
+  $("#map").on("click", function(event){
+    
+  });
+
+
+   
+   var apiKey = "ed87a106cc8297101a6fc11e750e7a8b";
+   var search = "italian";
+    var queryURL = "https://developers.zomato.com/api/v2.1/search?q=food truck&location=houston";
+
+       $.ajax({
+          url: queryURL,
+          headers: { 'user-key': apiKey },
+          method: 'GET'
+        }).done(function(response) {
+          
+        
+
+         for(var i=0; i<response.restaurants.length; i++)
+         {
+            console.log(response.restaurants[i]);
+         }
+          
+
+        });
+
+
+ /*
+//firebase initialization
+var config = {
+    apiKey: "AIzaSyCivOGHXHXHGLcYTXw9rLB95cFjM5XHUdc",
+    authDomain: "rollrater.firebaseapp.com",
+    databaseURL: "https://rollrater.firebaseio.com",
+    projectId: "rollrater",
+    storageBucket: "rollrater.appspot.com",
+    messagingSenderId: "110397318950"
+  };
+  firebase.initializeApp(config);
+
+
+  var database = firebase.database();
+
+  var UserName = "";
+  var UserMail = "";
+  var UserAddress = "";
+
+  $("#submitBtn").on("click", function(event)
+    {
+        event.preventDefault();
+
+        UserName = $("#name").val().trim();
+        UserMail = $("#email-address").val().trim();
+        UserAddress = $("#address").val().trim();
+
+        database.ref().push({
+          UserName: UserName,
+          UserEmail: UserEmail,
+          UserAddress: UserAddress,
+        });
+
+    });
+    */
