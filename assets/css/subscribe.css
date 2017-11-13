@@ -9,7 +9,7 @@
       .form-control{
         background-color: lightgrey;
       }
-      #submitBtn{
+      #signUp{
         background-color: #ff9800;
         //**border button not working yet**//
         border-style: solid;

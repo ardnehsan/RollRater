@@ -1,0 +1,95 @@
+	Project 1
+1st night, 10/30: We brainstormed for ideas, started off with an idea for food trucks, to locate them, and went through a very thorough vetting process. Tried on several other ideas as well but came back to doing food trucks. The specific focus is on ratings using the yelp and google maps api’s.  Some websites we used for research were roaming hunger.com, http://docs.foodtrucklocator.apiary.io/#reference/0/food-trucks-collection/locate-food-trucks, zagat, yelp, and google maps.  Roaming Hunger was good for selection but no customer reviews.  
+Our focus:	We want to make those reviews accessible through our website so customers can make more informed decisions.  One idea was to be able to search by style of food, for example ‘Italian food’. Tim made a mockup using balsamiq.
+	Our plan until Wednesday is to begin researching how to use the apis for the Google maps and from Yelp. From Google maps we are trying to find the location of where the food trucks will be. For Yelp we will be trying to pull the reviews the food truck has.
+Yelp Documentation: 
+•	Learn how to authenticate the Yelp API using OAuth v1.0a protocol
+•	Search for businesses by location, keyword and category
+•	Query Yelp attributes such as photo, rating, menus and review snippets
+•	Find up to 40 best results for a geographically-oriented search
+•	Sort results by the best match for the query, highest ratings, or distance
+•	Limit results to those businesses offering a Yelp Deal, and display information about the deal like the title, savings, and purchase URL
+•	Identify and display whether a business has been claimed on Yelp.com
+The API uses a standard, secure authorization protocol (OAuth 1.0a, xAuth) for authenticating requests and offers various API methods.
+This overview covers API methods and responses for both the Search and Business API, authentication, and code samples.
+	
+	Wednesday 11/1: 2nd group meeting
+-Pick a bootstrap theme
+-used startbootstrap.com for open source themes
+-decided to pass search through google maps and yelp for our apis
+-find out how to narrow search so only returns food trucks
+-stringify
+-Nash created a repo which we cloned onto our machines
+-Pick a clever name: brings together ‘food’ and ‘the road’ b/c its food trucks
+-Agreed upon name: “RollRater”
+-create branch (in github): git checkout –b
+-trying to go through google maps API
+Responsibilities: Tim: research google, Dave: yelp, Nash: back end (incl. firebase)
+-figure out how to make a request and have it return food trucks
+-found out Yelp won’t work for us, switched to google reviews
+-found out the other google api didn’t work either
+-Rachel suggested Postman-program to test API’s
+ 
+ 	Friday 11/3: David   
+-working with apis, learning postman, testing api’s in postman
+Well, I'm just getting my feet wet with api's and have never created a specific api like we are trying to do for our project.  I am trying to do something with specific parameters looking for reviews/ratings.  I'm not really sure if it will work in our app.  Should I try plugging it in the app to test if it works?
+[12:51] 
+was parousing what I got back in the postman app-theres 1000+ lines of code and I'm not sure how to necessarily interpret it.
+Rachel Thiim [12:52 PM] 
+Well the way you parse your response depends on what you want your application to do, functionally. You should read through the "keys" in your response object, and decide what information is relevant.
+[12:52] 
+If you have some starter code already made with your group, sure, go ahead and plug it into your app to test if the query works.   
+–spent several hours watching api videos and playing with apis in postmaster
+-slacking with Rachel (the ta) for guidance
+-need to pay attention to the documentation; learning about res_id; need to figure out what I need; I may not need a res_id
+Slack w/ Rachel: Tell me about your application. What would you like the user search feature to look like?
+Are you searching for a cuisine type, or a restaurant name, or a city the user might be in?
+David Bierma [6:18 PM] 
+well we would like to be able to search for food truck ratings/reviews.  I saw that zomato would supply up to 5 reviews for their free api
+its call rollrater
+[6:19] 
+with focus specifically on food truck location (using google maps api), and reviews/rating
+we may want to define the location but haven't decided on what specifically, ie just Houston, or globally
+[6:21] 
+that makes sense what you were saying about my res_id.  I didn't know what I was doing, just experimenting.
+[6:26] 
+googled about the res id and it looks like there is specific ids for individual restaurants.  Wonder if I even need a restaurant id since I'm looking for the category 'food trucks'.
+Rachel Thiim [7:40 PM] 
+You might first be making a more general call using a different API endpoint, and then getting the ID from that response. Then you could put that ID into this endpoint and yield what you're really interested in
+
+Saturday 11/4: 
+Git hub tutorial w/Chris-making a branch;
+-we all created branches and learned how to work as a team when merging and trying out new ideas. 
+-discussed using foursquare for our second api
+-picked out materialize as our new program to satisfy that requirement for project 1
+-David worked on implementing the materialize template into our project
+-steps to get materialize working: import jquery before importing materialize.js
+-added materialize link in html page
+-worked together and separately on parts of the project
+-outlook on Saturday end of class: David: work on css/styling, Tim: Api’s, Nash: firebase.  Meet Monday and save locally till then, talk about agreed upon changes before implementing
+
+	Monday 11/6
+-making connections between the pages; making sure the buttons are linked so when clicked return to the home page, etc.
+-updating id’s in html forms so they will match the javascript
+-foursquare api working; Nash found a tip on Linkedin from a user and was able to implement it in our code
+-working on refining the api call so it reflects the purpose of our search; limit the search to Houston, and only food trucks
+-discussing user authentication with reviews (ie that may be quite difficult to pull off given the time and other work we have to do)
+-Christian gave suggestions for going forward with our API’s, how we could satisfy the requirements and still keep our vision
+Tuesday:   troubleshooting an issue with the form on the review page; when clicked once its fine, but twice and a dropdown menu appears from an older project 
+Wednesday 11/8
+-Troubleshooting a bug in html; getting drop down menu when search form is clicked twice
+-I did a git push to my branch, pushing my changes to my branch
+-working together and with ta’s to understand the process of merging
+-tim is cooking a burrito
+-adding an onclick function that will get the lat/long
+-Nash found a work-around for the Zomato api (using a sister website)
+-meeting at starbucks at 290 and Jones on Thursday to tie everything up
+-Tim updated the map
+
+Friday
+-changes:
+	-subscribe.html:change address field to create password for better UI experience
+	-changed submit button to "signup"
+		-changed css submit id to signUp
+	-changed home button id to signUp(for styling)
+	-added terms and privacy to our subscribe.html page
