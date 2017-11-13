@@ -2,6 +2,8 @@
       // This example requires the Places library. Include the libraries=places
       // parameter when you first load the API. For example:
       // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+/*
 var lat = 29.7885595;
 var lng = -95.9143899;
     var map;
@@ -70,35 +72,81 @@ var lng = -95.9143899;
         });
       }
  
+      */
 
-  $("#map").on("click", function(event){
+$("document").ready(function(){
+
+   
+   var search = "taco";
+
+//write a search function that will activate the api request
+  $(document).on("click", '#searchBtn', function(event){
     
+    search = $("#search").val().toUpperCase();
+    console.log(search);
+    getRequest(search);
+    clear();
+
   });
 
 
-   
-   var apiKey = "ed87a106cc8297101a6fc11e750e7a8b";
-   var search = "italian";
-    var queryURL = "https://developers.zomato.com/api/v2.1/search?q=food truck&location=houston";
+  function getRequest(x){
+
+    clearList();
+    event.preventDefault();
+    var apiKey = "ed87a106cc8297101a6fc11e750e7a8b";
+    var queryURL = "https://developers.zomato.com/api/v2.1/search?q=truck&location=houston";
 
        $.ajax({
           url: queryURL,
           headers: { 'user-key': apiKey },
           method: 'GET'
         }).done(function(response) {
+  
+        console.log(response);
+
+      for(var i=0; i< response.restaurants.length; i++)
+        {
+          var type = response.restaurants[i].restaurant.cuisines.toUpperCase().split(" ");
+
+          for(var x=0; x< type.length; x++)
+          {
+            
+
+
+
+            if(search === type[x])
+            {
+
+               console.log(type[x]);
+
+               /*
+              $(".list").addClass("fTruck");
+              var n = $("<p>");
+              n.text(response.restaurants[i].restaurant.name);
+              $(".list").append(n);
+
+              */  
+            }
           
-        
+          }
+        }  
 
-         for(var i=0; i<response.restaurants.length; i++)
-         {
-            console.log(response.restaurants[i]);
-         }
-          
+     });
 
-        });
+  }
 
 
- /*
+  function clear(){
+    $("#search").val('');
+  }
+
+  function clearList(){
+    $(".list").empty();
+  }
+
+});
+  /*.location
 //firebase initialization
 var config = {
     apiKey: "AIzaSyCivOGHXHXHGLcYTXw9rLB95cFjM5XHUdc",
