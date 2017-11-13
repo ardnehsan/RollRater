@@ -1,10 +1,4 @@
 
-// <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRrvQjKR1XrKXYWYj-7IBOpVYab--uYxc&libraries=places&callback=initMap">
-      // This example requires the Places library. Include the libraries=places
-      // parameter when you first load the API. For example:
-//<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-
-
 
 var lat = 29.7885595;
 var lng = -95.9143899;
@@ -37,6 +31,9 @@ var lng = -95.9143899;
           infowindow.open(map, marker);
         });
       }
+
+       google.maps.event.addDomListener(window, 'load', initialize);
+
 $("document").ready(function(){
 
  // Initialize collapse button
@@ -164,6 +161,3 @@ var config = {
           UserEmail: UserEmail,
           UserAddress: UserAddress,
         });
-
-    });
-    */
