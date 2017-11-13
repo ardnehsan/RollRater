@@ -17,10 +17,13 @@
       }
       #logo-container{
         text-align: left;
-        font-family: padaloma;
+       
       }
       #search{
         width: 50%;
         background-color: #D3D3D3;
         border: 1px;
+        margin-left:25%;
       }
+
+
