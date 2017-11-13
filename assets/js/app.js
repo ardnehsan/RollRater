@@ -1,14 +1,11 @@
 
-  // <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRrvQjKR1XrKXYWYj-7IBOpVYab--uYxc&libraries=places&callback=initMap"
+// <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRrvQjKR1XrKXYWYj-7IBOpVYab--uYxc&libraries=places&callback=initMap">
       // This example requires the Places library. Include the libraries=places
       // parameter when you first load the API. For example:
-      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+//<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
-/*
-=======
-alert("working")
 
->>>>>>> 4db0878e4d107434975b83f7692a8755b26ab983
+
 var lat = 29.7885595;
 var lng = -95.9143899;
       var map;
@@ -40,13 +37,32 @@ var lng = -95.9143899;
           infowindow.open(map, marker);
         });
       }
-<<<<<<< HEAD
- 
-      */
-
 $("document").ready(function(){
 
-   
+ // Initialize collapse button
+  $(".button-collapse").sideNav();
+  // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+  //$('.collapsible').collapsible();  
+
+   $('.button-collapse').sideNav({
+      menuWidth: 300, // Default is 300
+      edge: 'right', // Choose the horizontal origin
+      closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+      draggable: true, // Choose whether you can drag to open on touch screens,
+    }
+  );
+
+
+  // Show sideNav
+  $('.button-collapse').sideNav('show');
+  // Hide sideNav
+  $('.button-collapse').sideNav('hide');
+  // Destroy sideNav
+  $('.button-collapse').sideNav('destroy');
+        
+
+
+
    var search = "taco";
 
 //write a search function that will activate the api request
@@ -55,14 +71,12 @@ $("document").ready(function(){
     search = $("#search").val().toUpperCase();
     console.log(search);
     getRequest(search);
-    clear();
 
   });
 
 
   function getRequest(x){
 
-    clearList();
     event.preventDefault();
     var apiKey = "ed87a106cc8297101a6fc11e750e7a8b";
     var queryURL = "https://developers.zomato.com/api/v2.1/search?q=truck&location=houston";
@@ -73,10 +87,13 @@ $("document").ready(function(){
           method: 'GET'
         }).done(function(response) {
   
-        console.log(response);
 
+      clearList();
+
+      console.log(response);
       for(var i=0; i< response.restaurants.length; i++)
         {
+
           var type = response.restaurants[i].restaurant.cuisines.toUpperCase().split(" ");
 
           for(var x=0; x< type.length; x++)
@@ -87,16 +104,15 @@ $("document").ready(function(){
 
             if(search === type[x])
             {
-
                console.log(type[x]);
-
-               /*
               $(".list").addClass("fTruck");
               var n = $("<p>");
               n.text(response.restaurants[i].restaurant.name);
               $(".list").append(n);
+              $(".fTruck").attr("locationX", response.restaurants[i].restaurant.location.latitude);
+             
 
-              */  
+            
             }
           
           }
