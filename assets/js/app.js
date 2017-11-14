@@ -54,12 +54,13 @@ $("document").ready(function(){
                console.log(type[x]);
               $(".list").addClass("fTruck");
               var n = $("<p>");
-            
+              var r = $("<p>");
               n.text(response.restaurants[i].restaurant.name);
-            
+              r.text(response.restaurants[i].restaurant.user_rating);
               n.attr("data-lat", response.restaurants[i].restaurant.location.latitude);
               n.attr("data-lng",response.restaurants[i].restaurant.location.longitude);
               $(".fTruck").append(n);
+              
               $(".list").append($(".fTruck"));
             
             }
@@ -72,7 +73,7 @@ $("document").ready(function(){
   }
     $(document).on("click", ".fTruck > p", function(){
         getMap($(this).attr("data-lat"),$(this).attr("data-lng"));
-        console.log("click");
+        clearList();
                 });
 
 
@@ -84,9 +85,9 @@ $("document").ready(function(){
     $(".list").empty();
   }
 
-    function getMap(lat, lng){
-
-      console.log("getmap runs");
+  function getMap(lat, lng){
+    lat = parseInt(lat);
+    lng = parseInt(lng);
       var map;
      
         var mapOptions = {
